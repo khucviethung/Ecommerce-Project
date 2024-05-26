@@ -1,0 +1,97 @@
+.login-form {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #00aaf8;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(1, 233, 250, 0.1);
+  background-color: #ffffff;
+  border-radius: 30px;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #e40c0c
+}
+
+.login-form .form-group {
+  margin-bottom: 15px;
+}
+
+.login-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #131111
+}
+
+.login-form .form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #1d2129
+}
+
+.login-form .form-group button {
+  width: 100%;
+  padding: 10px;
+  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(177,111,125,1) 100%);  
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.login-form .form-group button:hover {
+  background: #f50d0d;
+
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.password-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 2rem; // Make space for the icon
+}
+
+.password-toggle-icon {
+  position: absolute;
+  right: 0.5rem;
+  cursor: pointer;
+  color: #fd1515;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background: #0056b3;
+  }
+}
+
+
+// 
+
