@@ -2,7 +2,10 @@ import './App.scss'
 import LoginForm from './components/Login/LoginForm';
 import Menu from './components/Menu/Menu'
 import 'bootstrap/dist/css/bootstrap.css';
-// import { Outlet, Link } from "react-router-dom";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+import Product from './components/Product/Product';
+import About from './components/About/About';
+import PageNotFound from './components/PageNotFound/PageNotFound';
 
 
 // Function Component
@@ -34,11 +37,21 @@ const App: React.FC = () => {
 
         <div className='main-container'>
           <div className='sidenav-container'>
-            <LoginForm/>
           </div>
-          {/* <div className='app-content'>
-            <Outlet/>
-          </div> */}
+          <div className='app-content' id='content'>
+            <BrowserRouter>
+              <Routes>
+                {/* <Route index element={<App />}></Route> */}
+                <Route path="/" >
+                  <Route path="/Product" Component={Product} />
+                  <Route path="/AboutUs" Component={About} />
+                  <Route path="/Signin" Component={LoginForm} />
+                  <Route path="*" Component={PageNotFound} />
+                </Route>
+              </Routes>
+            </BrowserRouter>
+            <Outlet />
+          </div>
         </div>
       </div>
     </>

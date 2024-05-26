@@ -5,12 +5,13 @@ import { LuLock } from "react-icons/lu";
 import { FaEye, FaEyeSlash, FaRegUser } from "react-icons/fa";
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 
+
 // use Hook
-const LoginForm: React.FC = () => { 
+const LoginForm: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
-    const [listUsers] = useState(new Array<Object>()); 
+    const [listUsers] = useState(new Array<Object>());
 
     // xử lý khi submit
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -22,10 +23,13 @@ const LoginForm: React.FC = () => {
         notify();
     };
 
+    // thông báo
     const notify = () => {
-        var regex = /^[a-z]{1,5}$/
+        var regexUsername = /^[a-z]{1,10}$/   // ký tự từ a-z,nhập từ 1-10 ký tự
+        var regexPassword = /^[0-9]{8,}$/     // ký tự khoảng từ 0-9,nhập ít nhất 8 ký tự
 
-        if(regex.test(username)) {
+
+        if (regexUsername.test(username) && regexPassword.test(password)) {
             toast.success('Log in Successfully ! ', {
                 position: "top-right",
                 autoClose: 5000,
@@ -37,17 +41,45 @@ const LoginForm: React.FC = () => {
                 theme: "light",
                 transition: Bounce,
             });
-            
+
+            // render listUser
             listUsers.push({
                 username: username,
                 password: password
             })
+            console.log("List user :", listUsers)
 
-            console.log(listUsers)
+        }
+        else if(!username && !password){
+            toast.warn('Missing title ! ', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+                });
+        }
+        else {
+            toast.error('Login failed !', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+            });
         }
     }
 
     return (
+
         <form className="login-form" onSubmit={handleSubmit}>
             <h2>Sign In</h2>
             <div className="form-group">
@@ -59,7 +91,7 @@ const LoginForm: React.FC = () => {
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     autoFocus
-                    required
+                // required
                 />
             </div>
             <div className="form-group">
@@ -71,7 +103,7 @@ const LoginForm: React.FC = () => {
                         placeholder='Please enter a password...'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        required
+                    // required
                     />
                     <span
                         className="password-toggle-icon"
