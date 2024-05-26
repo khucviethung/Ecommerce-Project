@@ -38,6 +38,7 @@ const App: React.FC = () => {
         <div className='main-container'>
           <div className='sidenav-container'>
           </div>
+
           <div className='app-content' id='content'>
             <BrowserRouter>
               <Routes>
