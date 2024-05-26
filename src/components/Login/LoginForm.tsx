@@ -3,16 +3,14 @@ import './LoginForm.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { LuLock } from "react-icons/lu";
 import { FaEye, FaEyeSlash, FaRegUser } from "react-icons/fa";
-import { ToastContainer,toast } from 'react-toastify';
-
-
+import { Bounce, ToastContainer, toast } from 'react-toastify';
 
 // use Hook
-const LoginForm: React.FC = () => {
+const LoginForm: React.FC = () => { 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
-
+    const [listUsers] = useState(new Array<Object>()); 
 
     // xử lý khi submit
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -22,19 +20,31 @@ const LoginForm: React.FC = () => {
         // Handle form submission logic here
         console.log('Username:', username, '\n', 'Password:', password);
         notify();
-
     };
+
     const notify = () => {
-        toast.success('Log in successfully! Wait a second ', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-        });
+        var regex = /^[a-z]{1,5}$/
+
+        if(regex.test(username)) {
+            toast.success('Log in Successfully ! ', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: false,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+            });
+            
+            listUsers.push({
+                username: username,
+                password: password
+            })
+
+            console.log(listUsers)
+        }
     }
 
     return (
@@ -73,7 +83,8 @@ const LoginForm: React.FC = () => {
             </div>
 
             <div className="form-group">
-                <button type="submit" onClick={notify}>Log in</button>
+                <button id='buttonsubmit' type="submit">Log in</button>
+                <ToastContainer />
             </div>
         </form>
 
