@@ -35,11 +35,12 @@ export default {
 - Create new branch with prefix: feat/fix/refactor: pr-purpose
 - Create PR on github and merge
 
-feat: feature mới
-fix: fix bug
-refactor: chỉnh lại xử lý hiện tại
-improve: improve gì đó
-chore: cập nhật nhỏ
+## PR-title
+- Feat: feature mới
+- Fix: fix bug
+- Refactor: chỉnh lại xử lý hiện tại
+- Improve: improve gì đó
+- Chore: cập nhật nhỏ
 
 Install dependencies
 
