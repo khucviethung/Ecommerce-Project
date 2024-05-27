@@ -16,44 +16,44 @@ const App: React.FC = () => {
     { title: 'Sản phẩm', link: '/Product' },
     { title: 'Vể chúng tôi', link: '/AboutUs' },
     { title: 'Liên hệ', link: '/Contact' },
-    { title: 'Đăng ký', link: '/Signup'  },
+    { title: 'Đăng ký', link: '/Signup' },
     { title: 'Đăng nhập', link: '/Login' },
   ]
 
 
   return (
 
-      <div className='app-container'>
-        <div className='menu'>
-          <span className='left-menu'>
-            <Menu items={menuItems} />
-          </span>
-          {/* <span className='right-menu'>
+    <div className='app-container'>
+      <div className='menu'>
+        <span className='left-menu'>
+          <Menu items={menuItems} />
+        </span>
+        {/* <span className='right-menu'>
             <Menu items={menuItems} />
           </span> */}
+      </div>
+
+      <div className='main-container'>
+        <div className='sidenav-container'>
         </div>
 
-        <div className='main-container'>
-          <div className='sidenav-container'>
-          </div>
-
-          <div className='app-content' id='content'>
-            <BrowserRouter>
-              <Routes>
-                {/* <Route index element={<App />}></Route> */}
-                <Route path="/" element={<Outlet/>} >
-                  <Route path="/Product" element={<Product/>} />
-                  <Route path="/AboutUs" element={<About/>} />
-                  <Route path="/Signup" element={<Signup/>} />
-                  <Route path="/Login" element={<LoginForm/>} />
-                  <Route path="*" element={<PageNotFound/>} />
-                </Route>
-              </Routes>
-            </BrowserRouter>
-            {/* <Outlet /> */}
-          </div>
+        <div className='app-content' id='content'>
+          <BrowserRouter>
+            <Routes>
+              {/* <Route index element={<App />}></Route> */}
+              <Route path="/" element={<Outlet />} >
+                <Route path="/Product" element={<Product />} />
+                <Route path="/AboutUs" element={<About />} />
+                <Route path="/Signup" element={<Signup />} />
+                <Route path="/Login" element={<LoginForm />} />
+                <Route path="*" element={<PageNotFound />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+          {/* <Outlet /> */}
         </div>
       </div>
+    </div>
 
   );
 }

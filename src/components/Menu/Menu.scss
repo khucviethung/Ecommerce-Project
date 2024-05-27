@@ -1,31 +1,4 @@
-// nav {
-//   background-color: #333;
-
-//   ul {
-//     list-style: none;
-//     margin: 0;
-//     padding: 0;
-//     display: flex;
-
-//     li {
-//       margin: 0;
-
-//       a {
-//         display: block;
-//         padding: 1em;
-//         color: white;
-//         text-decoration: none;
-
-//         &:hover {
-//           background-color: #575757;
-//           color: 'red'
-//         }
-//       }
-//     }
-//   }
-// }
-
-// css cho menu flex box
+/* css for flexbox menu */
 .menu {
   background-color: #333;
   padding: 5px;
@@ -36,7 +9,6 @@
     padding: 0;
     display: flex;
     gap: 5px;
-    justify-content: center;
     align-items: center;
 
     .menu-item {
@@ -47,43 +19,28 @@
         text-decoration: none;
 
         &:hover {
-          background-color: #555;
+          background-color: #52e625;
+          background-size: contain;
         }
       }
 
-      &:nth-child(1) {
-        // background-color: red;
-      }
-
-      &:nth-child(2) {
-        // background-color: blue;
-      }
-
-      &:nth-child(3) {
-        // background-color: yellow;
-      }
-
-      &:nth-child(4) {
-        // background-color: #00b14f;
-      }
-
-      &:nth-child(5)  {
-        margin-left: auto;
+      &:nth-child(5) {
+        margin-left: auto; /* Pushes all items after this to the right */
         .menu-link {
           background-color: #ffffff;
           color: #00b14f;
           border: 1px solid #00b14f;
           border-radius: 20px;
         }
-      } 
-      &:nth-child(6)  {
-        margin-left: auto;
+      }
+
+      &:nth-child(6) {
         .menu-link {
           color: #ffffff;
           border: 1px solid #00b14f;
           border-radius: 20px;
         }
-      } 
+      }
     }
   }
 }
