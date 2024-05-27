@@ -6,6 +6,7 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import Product from './components/Product/Product';
 import About from './components/About/About';
 import PageNotFound from './components/PageNotFound/PageNotFound';
+import Signup from './components/Signup/Signup';
 
 
 // Function Component
@@ -43,6 +44,7 @@ const App: React.FC = () => {
                 <Route path="/" element={<Outlet/>} >
                   <Route path="/Product" element={<Product/>} />
                   <Route path="/AboutUs" element={<About/>} />
+                  <Route path="/Signup" element={<Signup/>} />
                   <Route path="/Login" element={<LoginForm/>} />
                   <Route path="*" element={<PageNotFound/>} />
                 </Route>
