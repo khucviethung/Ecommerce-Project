@@ -5,6 +5,7 @@ import { LuLock } from "react-icons/lu";
 import { FaEye, FaEyeSlash, FaRegUser } from "react-icons/fa";
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 import Container from 'react-bootstrap/esm/Container';
+import { Link } from 'react-router-dom';
 
 
 // use Hook
@@ -56,8 +57,8 @@ const LoginForm: React.FC = () => {
 
         }
         else if (!username && !password ) {
-            setUsernameError('* Enter at least 4 letters from A-Z');
-            setPasswordError('* Password must be a number at least 8 characters');
+            setUsernameError('* Vui lòng điền ít nhất 4 chữ cái');
+            setPasswordError('* Mật khẩu phải ít nhất có 8 kí tự');
             toast.warn('Missing title ! ', {
                 position: "top-right",
                 autoClose: 5000,
@@ -71,8 +72,8 @@ const LoginForm: React.FC = () => {
             });
         }
         else {
-            setUsernameError('* Enter at least 4 letters from A-Z');
-            setPasswordError('* Password must be a number at least 4 characters');
+            setUsernameError('* Vui lòng điền ít nhất 4 chữ cái');
+            setPasswordError('* Mật khẩu phải ít nhất có 8 kí tự');
             toast.error('Login failed !', {
                 position: "top-right",
                 autoClose: 5000,
@@ -92,14 +93,14 @@ const LoginForm: React.FC = () => {
         <>
             <Container>
                 <form className="login-form" onSubmit={handleSubmit}>
-                    <h2>Sign In</h2>
+                    <h2>Đăng nhập</h2>
                     <h2></h2>
                     <div className="form-group">
-                        <label htmlFor="username"><FaRegUser /> Username </label>
+                        <label htmlFor="username"><FaRegUser /> Tên người dùng </label>
                         <input
                             type="text"
                             id="username"
-                            placeholder='Your username...'
+                            placeholder='Tên ...'
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             autoFocus />
@@ -108,12 +109,12 @@ const LoginForm: React.FC = () => {
                         </div>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="password"><LuLock /> Password</label>
+                        <label htmlFor="password"><LuLock />Mật khẩu</label>
                         <div className="password-wrapper">
                             <input
                                 type={showPassword ? 'text' : 'password'}
                                 id="password"
-                                placeholder='Please enter a password...'
+                                placeholder='Nhập mật khẩu...'
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)} />
                             <span
@@ -129,8 +130,11 @@ const LoginForm: React.FC = () => {
                     </div>
 
                     <div className="form-group">
-                        <button id='buttonsubmit' type="submit">Log in</button>
+                        <button id='buttonsubmit' type="submit">ĐĂNG NHẬP</button>
                         <ToastContainer />
+                    </div>
+                    <div className='suggesst text-center'>
+                        <span>Bạn chưa có tài khoản ? <Link to={'/About'} className='text-danger link-underline-danger'>Đăng ký</Link></span>
                     </div>
                 </form>
             </Container>

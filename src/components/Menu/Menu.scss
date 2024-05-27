@@ -1,22 +1,89 @@
-nav {
+// nav {
+//   background-color: #333;
+
+//   ul {
+//     list-style: none;
+//     margin: 0;
+//     padding: 0;
+//     display: flex;
+
+//     li {
+//       margin: 0;
+
+//       a {
+//         display: block;
+//         padding: 1em;
+//         color: white;
+//         text-decoration: none;
+
+//         &:hover {
+//           background-color: #575757;
+//           color: 'red'
+//         }
+//       }
+//     }
+//   }
+// }
+
+// css cho menu flex box
+.menu {
   background-color: #333;
-  ul {
+  padding: 5px;
+
+  .menu-list {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    li {
-      margin: 0;
-      a {
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+    .menu-item {
+      .menu-link {
         display: block;
-        padding: 1em;
+        padding: 10px 20px;
         color: white;
         text-decoration: none;
+
         &:hover {
-          background-color: #575757;
-          color:'red'
+          background-color: #555;
         }
       }
+
+      &:nth-child(1) {
+        // background-color: red;
+      }
+
+      &:nth-child(2) {
+        // background-color: blue;
+      }
+
+      &:nth-child(3) {
+        // background-color: yellow;
+      }
+
+      &:nth-child(4) {
+        // background-color: #00b14f;
+      }
+
+      &:nth-child(5)  {
+        margin-left: auto;
+        .menu-link {
+          background-color: #ffffff;
+          color: #00b14f;
+          border: 1px solid #00b14f;
+          border-radius: 20px;
+        }
+      } 
+      &:nth-child(6)  {
+        margin-left: auto;
+        .menu-link {
+          color: #ffffff;
+          border: 1px solid #00b14f;
+          border-radius: 20px;
+        }
+      } 
     }
   }
 }

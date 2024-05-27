@@ -11,28 +11,25 @@ import PageNotFound from './components/PageNotFound/PageNotFound';
 // Function Component
 const App: React.FC = () => {
   const menuItems = [
-    { title: 'Home', link: '/' },
-    { title: 'Product', link: '/Product' },
-    { title: 'About us', link: '/AboutUs' },
-    { title: 'Contact', link: '/Contact' },
-
-  ];
-  const loginItems = [
-    { title: 'Sign in', link: '/Signin' },
-    { title: 'Sign up', link: '/Signup' },
+    { title: 'Trang chủ', link: '/' },
+    { title: 'Sản phẩm', link: '/Product' },
+    { title: 'Vể chúng tôi', link: '/AboutUs' },
+    { title: 'Liên hệ', link: '/Contact' },
+    { title: 'Đăng ký', link: '/Signup'  },
+    { title: 'Đăng nhập', link: '/Login' },
   ]
 
 
   return (
-    <>
+
       <div className='app-container'>
         <div className='menu'>
           <span className='left-menu'>
             <Menu items={menuItems} />
           </span>
-          <span className='right-menu'>
-            <Menu items={loginItems} />
-          </span>
+          {/* <span className='right-menu'>
+            <Menu items={menuItems} />
+          </span> */}
         </div>
 
         <div className='main-container'>
@@ -43,19 +40,19 @@ const App: React.FC = () => {
             <BrowserRouter>
               <Routes>
                 {/* <Route index element={<App />}></Route> */}
-                <Route path="/" >
-                  <Route path="/Product" Component={Product} />
-                  <Route path="/AboutUs" Component={About} />
-                  <Route path="/Signin" Component={LoginForm} />
-                  <Route path="*" Component={PageNotFound} />
+                <Route path="/" element={<Outlet/>} >
+                  <Route path="/Product" element={<Product/>} />
+                  <Route path="/AboutUs" element={<About/>} />
+                  <Route path="/Login" element={<LoginForm/>} />
+                  <Route path="*" element={<PageNotFound/>} />
                 </Route>
               </Routes>
             </BrowserRouter>
-            <Outlet />
+            {/* <Outlet /> */}
           </div>
         </div>
       </div>
-    </>
+
   );
 }
 
