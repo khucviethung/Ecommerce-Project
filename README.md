@@ -28,3 +28,27 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+## Git-flow
+
+- Pull latest source code from main
+- Create new branch with prefix: feat/fix/refactor: pr-purpose
+- Create PR on github and merge
+
+feat: feature mới
+fix: fix bug
+refactor: chỉnh lại xử lý hiện tại
+improve: improve gì đó
+chore: cập nhật nhỏ
+
+Install dependencies
+
+```bash
+yarn install
+```
+
+start local server
+
+```bash
+yarn dev
+```
